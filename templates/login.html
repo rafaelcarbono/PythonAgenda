@@ -1,0 +1,22 @@
+{% extends 'model-page.html' %}
+
+    {% block content%}
+    <form action="submit" method="POST"> {% csrf_token %}
+
+        <label>Insira o Username:</label>
+        <br>
+        <input type="text" name="username">
+        <br>
+        <label>Insira sua senha:</label>
+        <br>
+        <input type="password" name="password">
+        <br>
+        <button type="submit">Entrar</button>
+    </form>
+
+    {% for message in messages %}
+        <p>Erro:</p> {{ message }}
+    {% endfor %}
+    {% endblock %}
+
+    
